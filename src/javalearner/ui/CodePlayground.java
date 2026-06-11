@@ -80,7 +80,7 @@ public class CodePlayground extends JPanel {
 
         JLabel hintLabel = new JLabel("在这里自由编写Java代码，点击运行查看结果");
         hintLabel.setFont(Theme.FONT_SMALL);
-        hintLabel.setForeground(new Color(170, 180, 200));
+        hintLabel.setForeground(new Color(200, 180, 155));
         leftPanel.add(hintLabel);
 
         panel.add(leftPanel, BorderLayout.WEST);
@@ -91,7 +91,7 @@ public class CodePlayground extends JPanel {
 
         JLabel templateLabel = new JLabel("📋 快速模板：");
         templateLabel.setFont(Theme.FONT_SMALL);
-        templateLabel.setForeground(new Color(200, 200, 220));
+        templateLabel.setForeground(new Color(215, 200, 180));
         rightPanel.add(templateLabel);
 
         exampleSelector = new JComboBox<>(TEMPLATES);
@@ -114,17 +114,17 @@ public class CodePlayground extends JPanel {
 
         // 编辑器标题栏
         JPanel editorBar = new JPanel(new BorderLayout());
-        editorBar.setBackground(new Color(50, 55, 65));
+        editorBar.setBackground(new Color(55, 45, 38));
         editorBar.setBorder(new EmptyBorder(6, 14, 6, 14));
 
         JLabel editorLabel = new JLabel("📝 代码编辑器 (Java)");
         editorLabel.setFont(new Font("Microsoft YaHei", Font.BOLD, 12));
-        editorLabel.setForeground(new Color(200, 210, 225));
+        editorLabel.setForeground(new Color(210, 195, 170));
         editorBar.add(editorLabel, BorderLayout.WEST);
 
         lineCountLabel = new JLabel("行: 0");
         lineCountLabel.setFont(new Font("NSimSun", Font.PLAIN, 11));
-        lineCountLabel.setForeground(new Color(140, 150, 170));
+        lineCountLabel.setForeground(new Color(160, 140, 115));
         editorBar.add(lineCountLabel, BorderLayout.EAST);
 
         panel.add(editorBar, BorderLayout.NORTH);
@@ -132,7 +132,7 @@ public class CodePlayground extends JPanel {
         // 代码编辑区
         codeEditor = new JTextArea();
         codeEditor.setFont(Theme.FONT_CODE);
-        codeEditor.setForeground(new Color(220, 230, 240));
+        codeEditor.setForeground(new Color(225, 215, 195));
         codeEditor.setBackground(Theme.BG_CODE);
         codeEditor.setCaretColor(Color.WHITE);
         codeEditor.setTabSize(4);
@@ -170,16 +170,16 @@ public class CodePlayground extends JPanel {
 
     private JPanel createOutputPanel() {
         JPanel panel = new JPanel(new BorderLayout());
-        panel.setBackground(new Color(30, 35, 45));
+        panel.setBackground(new Color(38, 32, 27));
 
         // 输出标题栏
         JPanel outputBar = new JPanel(new BorderLayout());
-        outputBar.setBackground(new Color(40, 45, 55));
+        outputBar.setBackground(new Color(52, 42, 36));
         outputBar.setBorder(new EmptyBorder(6, 14, 6, 14));
 
         JLabel outputLabel = new JLabel("📤 运行输出");
         outputLabel.setFont(new Font("Microsoft YaHei", Font.BOLD, 12));
-        outputLabel.setForeground(new Color(200, 210, 225));
+        outputLabel.setForeground(new Color(210, 195, 170));
         outputBar.add(outputLabel, BorderLayout.WEST);
 
         // 按钮区
@@ -202,8 +202,8 @@ public class CodePlayground extends JPanel {
         // 输出区域
         outputArea = new JTextArea();
         outputArea.setFont(new Font("NSimSun", Font.PLAIN, 13));
-        outputArea.setForeground(new Color(192, 224, 144));
-        outputArea.setBackground(new Color(30, 35, 45));
+        outputArea.setForeground(new Color(200, 214, 160));
+        outputArea.setBackground(new Color(38, 32, 27));
         outputArea.setEditable(false);
         outputArea.setBorder(new EmptyBorder(10, 14, 10, 14));
         outputArea.setText("// 欢迎来到自由练习区！\n" +
@@ -216,16 +216,16 @@ public class CodePlayground extends JPanel {
 
         JScrollPane outputScroll = new JScrollPane(outputArea);
         outputScroll.setBorder(null);
-        outputScroll.getViewport().setBackground(new Color(30, 35, 45));
+        outputScroll.getViewport().setBackground(new Color(38, 32, 27));
 
         panel.add(outputScroll, BorderLayout.CENTER);
 
         // 底部状态栏
         statusLabel = new JLabel("  ✅ 准备就绪，开始写代码吧！");
         statusLabel.setFont(new Font("Microsoft YaHei", Font.PLAIN, 11));
-        statusLabel.setForeground(new Color(130, 140, 160));
+        statusLabel.setForeground(new Color(160, 140, 115));
         statusLabel.setBorder(new EmptyBorder(4, 12, 4, 12));
-        statusLabel.setBackground(new Color(25, 30, 38));
+        statusLabel.setBackground(new Color(30, 26, 22));
         statusLabel.setOpaque(true);
         panel.add(statusLabel, BorderLayout.SOUTH);
 
@@ -235,8 +235,8 @@ public class CodePlayground extends JPanel {
     private JButton createSmallButton(String text) {
         JButton btn = new JButton(text);
         btn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 11));
-        btn.setForeground(new Color(200, 210, 225));
-        btn.setBackground(new Color(55, 60, 75));
+        btn.setForeground(new Color(210, 195, 170));
+        btn.setBackground(new Color(72, 58, 48));
         btn.setBorder(new EmptyBorder(4, 10, 4, 10));
         btn.setFocusPainted(false);
         btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -245,9 +245,9 @@ public class CodePlayground extends JPanel {
 
         btn.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseEntered(MouseEvent e) { btn.setBackground(new Color(70, 75, 90)); }
+            public void mouseEntered(MouseEvent e) { btn.setBackground(new Color(88, 70, 58)); }
             @Override
-            public void mouseExited(MouseEvent e) { btn.setBackground(new Color(55, 60, 75)); }
+            public void mouseExited(MouseEvent e) { btn.setBackground(new Color(72, 58, 48)); }
         });
 
         return btn;

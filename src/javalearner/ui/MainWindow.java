@@ -113,7 +113,7 @@ public class MainWindow extends JFrame {
 
         progressLabel = new JLabel();
         progressLabel.setFont(Theme.FONT_SMALL);
-        progressLabel.setForeground(new Color(200, 200, 220));
+        progressLabel.setForeground(new Color(215, 200, 180));
         rightPanel.add(progressLabel);
 
         // 进度条
@@ -121,7 +121,7 @@ public class MainWindow extends JFrame {
         progressBar.setPreferredSize(new Dimension(150, 16));
         progressBar.setStringPainted(true);
         progressBar.setForeground(Theme.SUCCESS);
-        progressBar.setBackground(new Color(60, 60, 80));
+        progressBar.setBackground(new Color(70, 55, 45));
         progressBar.setFont(Theme.FONT_SMALL);
         rightPanel.add(progressBar);
 
@@ -180,7 +180,7 @@ public class MainWindow extends JFrame {
 
                 JLabel catLabel = new JLabel("📁 " + currentCategory);
                 catLabel.setFont(new Font("Microsoft YaHei", Font.BOLD, 12));
-                catLabel.setForeground(new Color(180, 190, 210));
+                catLabel.setForeground(new Color(200, 175, 145));
                 catPanel.add(catLabel);
                 panel.add(catPanel);
             }
@@ -262,7 +262,7 @@ public class MainWindow extends JFrame {
             @Override
             public void mouseEntered(MouseEvent e) {
                 if (!lesson.getId().equals(currentLessonId)) {
-                    btn.setBackground(new Color(55, 55, 75));
+                    btn.setBackground(new Color(75, 58, 48));
                 }
             }
             @Override
@@ -279,7 +279,7 @@ public class MainWindow extends JFrame {
 
     private void updateLessonButtonStyle(JButton btn, Lesson lesson, boolean selected) {
         if (selected) {
-            btn.setBackground(new Color(70, 80, 110));
+            btn.setBackground(new Color(95, 72, 55));
             btn.setOpaque(true);
             btn.setBorder(BorderFactory.createCompoundBorder(
                 new EmptyBorder(8, 13, 8, 12),
@@ -294,8 +294,8 @@ public class MainWindow extends JFrame {
 
     private void styleSidebarSpecialButton(JButton btn) {
         btn.setFont(new Font("Microsoft YaHei", Font.BOLD, 13));
-        btn.setForeground(new Color(180, 200, 230));
-        btn.setBackground(new Color(50, 50, 70));
+        btn.setForeground(new Color(210, 190, 160));
+        btn.setBackground(new Color(70, 55, 45));
         btn.setBorder(new EmptyBorder(10, 16, 10, 16));
         btn.setFocusPainted(false);
         btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -303,13 +303,13 @@ public class MainWindow extends JFrame {
         btn.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                btn.setBackground(new Color(65, 65, 90));
+                btn.setBackground(new Color(85, 68, 55));
                 btn.setForeground(Theme.TEXT_WHITE);
             }
             @Override
             public void mouseExited(MouseEvent e) {
-                btn.setBackground(new Color(50, 50, 70));
-                btn.setForeground(new Color(180, 200, 230));
+                btn.setBackground(new Color(70, 55, 45));
+                btn.setForeground(new Color(210, 190, 160));
             }
         });
     }
@@ -331,17 +331,17 @@ public class MainWindow extends JFrame {
         btn.setAlignmentX(Component.LEFT_ALIGNMENT);
         btn.setFocusPainted(false);
         btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        btn.setBackground(new Color(45, 55, 45));
+        btn.setBackground(new Color(65, 55, 42));
         btn.setOpaque(true);
         btn.setName("exercise-" + chapterKey);
 
         JLabel leftLabel = new JLabel(completed ? "✅ " : "🏆 " + "章节练习");
         leftLabel.setFont(new Font("Microsoft YaHei", Font.PLAIN, 12));
-        leftLabel.setForeground(completed ? Theme.SUCCESS : new Color(180, 210, 160));
+        leftLabel.setForeground(completed ? Theme.SUCCESS : new Color(190, 170, 130));
 
         JLabel rightLabel = new JLabel(completed ? "已完成" : "→ 挑战");
         rightLabel.setFont(new Font("Microsoft YaHei", Font.PLAIN, 11));
-        rightLabel.setForeground(completed ? Theme.SUCCESS : new Color(255, 200, 100));
+        rightLabel.setForeground(completed ? Theme.SUCCESS : new Color(232, 180, 79));
 
         btn.add(leftLabel, BorderLayout.WEST);
         btn.add(rightLabel, BorderLayout.EAST);
@@ -350,11 +350,11 @@ public class MainWindow extends JFrame {
         btn.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                btn.setBackground(new Color(55, 68, 55));
+                btn.setBackground(new Color(78, 66, 52));
             }
             @Override
             public void mouseExited(MouseEvent e) {
-                btn.setBackground(new Color(45, 55, 45));
+                btn.setBackground(new Color(65, 55, 42));
             }
         });
 
@@ -385,7 +385,7 @@ public class MainWindow extends JFrame {
 
     private JPanel createSidebarSeparator() {
         JPanel sep = new JPanel();
-        sep.setBackground(new Color(60, 60, 80));
+        sep.setBackground(new Color(90, 72, 60));
         sep.setMaximumSize(new Dimension(240, 1));
         sep.setAlignmentX(Component.LEFT_ALIGNMENT);
         sep.setBorder(new EmptyBorder(0, 10, 0, 10));
@@ -435,7 +435,7 @@ public class MainWindow extends JFrame {
 
         // 圆角边框
         card.setBorder(BorderFactory.createCompoundBorder(
-            new RoundedBorder(Theme.RADIUS_LARGE, new Color(220, 220, 230)),
+            new RoundedBorder(Theme.RADIUS_LARGE, new Color(210, 195, 175)),
             new EmptyBorder(50, 50, 50, 50)
         ));
 
@@ -453,7 +453,7 @@ public class MainWindow extends JFrame {
 
         JLabel statusLabel = new JLabel("💡 学习小技巧：动手敲代码比光看效果好10倍！");
         statusLabel.setFont(Theme.FONT_SMALL);
-        statusLabel.setForeground(new Color(180, 180, 200));
+        statusLabel.setForeground(new Color(200, 185, 165));
         bar.add(statusLabel, BorderLayout.WEST);
 
         return bar;
@@ -676,7 +676,7 @@ public class MainWindow extends JFrame {
 
                 JLabel catLabel = new JLabel("📁 " + currentCategory);
                 catLabel.setFont(new Font("Microsoft YaHei", Font.BOLD, 12));
-                catLabel.setForeground(new Color(180, 190, 210));
+                catLabel.setForeground(new Color(200, 175, 145));
                 catPanel.add(catLabel);
                 sidebarPanel.add(catPanel);
             }

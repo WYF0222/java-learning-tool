@@ -218,14 +218,14 @@ public class LessonView extends JPanel {
 
         // 输出内容面板
         JPanel outputContent = new JPanel(new BorderLayout());
-        outputContent.setBackground(new Color(30, 35, 45));
+        outputContent.setBackground(new Color(38, 32, 27));
         outputContent.setBorder(BorderFactory.createCompoundBorder(
-            new RoundedBorder(Theme.RADIUS_SMALL, new Color(60, 70, 90)),
+            new RoundedBorder(Theme.RADIUS_SMALL, new Color(80, 65, 50)),
             new EmptyBorder(10, 14, 10, 14)
         ));
         outputContent.setVisible(false);
 
-        JLabel outputLabel = new JLabel("<html><pre style='color:#c0e090;font-family:NSimSun,SimSun,monospace;font-size:12px;margin:0;'>" +
+        JLabel outputLabel = new JLabel("<html><pre style='color:#c8d6a0;font-family:NSimSun,SimSun,monospace;font-size:12px;margin:0;'>" +
             "// 运行结果 ↓\n" +
             output.replace("\n", "<br>") +
             "</pre></html>");
@@ -273,7 +273,7 @@ public class LessonView extends JPanel {
                     for (Component c : panel.getComponents()) {
                         if (c instanceof JButton && ((JButton) c).getText().contains("标记完成")) {
                             ((JButton) c).setText("✅ 已完成 ✓");
-                            ((JButton) c).setBackground(new Color(200, 220, 200));
+                            ((JButton) c).setBackground(new Color(195, 185, 170));
                             ((JButton) c).setEnabled(false);
                         }
                     }
@@ -336,7 +336,7 @@ public class LessonView extends JPanel {
     static class CompoundedRoundedBorder extends CompoundBorder {
         CompoundedRoundedBorder(int radius, int hPad, int vPad) {
             super(
-                new MainWindow.RoundedBorder(radius, new Color(220, 225, 235)),
+                new MainWindow.RoundedBorder(radius, new Color(210, 195, 175)),
                 new EmptyBorder(vPad, hPad, vPad, hPad)
             );
         }

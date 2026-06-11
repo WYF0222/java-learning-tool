@@ -104,7 +104,7 @@ public class QuizView extends JPanel {
         JPanel navPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 16, 0));
         navPanel.setOpaque(false);
 
-        prevButton = createStyledButton("◀ 上一题", new Color(140, 140, 160), new Color(160, 160, 180));
+        prevButton = createStyledButton("◀ 上一题", new Color(150, 130, 110), new Color(170, 150, 130));
         prevButton.addActionListener(e -> {
             if (currentIndex > 0) {
                 saveAnswer();
@@ -191,7 +191,7 @@ public class QuizView extends JPanel {
                             c.setBackground(Color.WHITE);
                         }
                     }
-                    rb.setBackground(new Color(235, 245, 255));
+                    rb.setBackground(new Color(255, 245, 230));
                 }
             });
 
@@ -204,7 +204,7 @@ public class QuizView extends JPanel {
         // 恢复之前的答案
         if (userAnswers[index] >= 0 && userAnswers[index] < optionButtons.length) {
             optionButtons[userAnswers[index]].setSelected(true);
-            optionButtons[userAnswers[index]].setBackground(new Color(235, 245, 255));
+            optionButtons[userAnswers[index]].setBackground(new Color(255, 245, 230));
         }
 
         questionCard.add(optionsPanel);
@@ -242,11 +242,11 @@ public class QuizView extends JPanel {
         boolean correct = q.isCorrect(userAnswer);
 
         if (correct) {
-            feedbackLabel.setText("<html><div style='color:#28a745;'>✅ 回答正确！" +
+            feedbackLabel.setText("<html><div style='color:#6ba368;'>✅ 回答正确！" +
                 (q.getExplanation() != null ? " " + q.getExplanation() : "") +
                 "</div></html>");
         } else {
-            feedbackLabel.setText("<html><div style='color:#dc3545;'>❌ 回答错误！正确答案是：<b>" +
+            feedbackLabel.setText("<html><div style='color:#d4685a;'>❌ 回答错误！正确答案是：<b>" +
                 q.getOptions().get(q.getCorrectIndex()) + "</b>" +
                 (q.getExplanation() != null ? "<br>💡 " + q.getExplanation() : "") +
                 "</div></html>");
@@ -366,7 +366,7 @@ public class QuizView extends JPanel {
                 g2.setColor(Color.WHITE);
                 g2.fillOval(x + 5, y + 5, SIZE - 10, SIZE - 10);
             } else {
-                g2.setColor(new Color(180, 180, 190));
+                g2.setColor(new Color(175, 155, 135));
                 g2.drawOval(x, y, SIZE - 1, SIZE - 1);
             }
 
@@ -382,7 +382,7 @@ public class QuizView extends JPanel {
     static class CompoundedRoundedBorder extends CompoundBorder {
         CompoundedRoundedBorder(int radius, int hPad, int vPad) {
             super(
-                new MainWindow.RoundedBorder(radius, new Color(220, 225, 235)),
+                new MainWindow.RoundedBorder(radius, new Color(210, 195, 175)),
                 new EmptyBorder(vPad, hPad, vPad, hPad)
             );
         }

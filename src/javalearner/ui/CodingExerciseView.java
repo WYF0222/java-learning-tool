@@ -51,7 +51,7 @@ public class CodingExerciseView extends JPanel {
         JPanel titleCard = new JPanel(new BorderLayout());
         titleCard.setBackground(Color.WHITE);
         titleCard.setBorder(new CompoundBorder(
-            new MainWindow.RoundedBorder(Theme.RADIUS_MEDIUM, new Color(220, 225, 235)),
+            new MainWindow.RoundedBorder(Theme.RADIUS_MEDIUM, new Color(210, 195, 175)),
             new EmptyBorder(18, 24, 18, 24)
         ));
         titleCard.setMaximumSize(new Dimension(Integer.MAX_VALUE, 65));
@@ -85,7 +85,7 @@ public class CodingExerciseView extends JPanel {
         JPanel descCard = new JPanel(new BorderLayout());
         descCard.setBackground(Color.WHITE);
         descCard.setBorder(new CompoundBorder(
-            new MainWindow.RoundedBorder(Theme.RADIUS_MEDIUM, new Color(220, 225, 235)),
+            new MainWindow.RoundedBorder(Theme.RADIUS_MEDIUM, new Color(210, 195, 175)),
             new EmptyBorder(20, 24, 16, 24)
         ));
 
@@ -110,8 +110,8 @@ public class CodingExerciseView extends JPanel {
 
             JTextArea expArea = new JTextArea(exercise.getExpectedOutputExample());
             expArea.setFont(new Font("NSimSun", Font.PLAIN, 12));
-            expArea.setForeground(new Color(100, 120, 140));
-            expArea.setBackground(new Color(245, 247, 250));
+            expArea.setForeground(new Color(130, 110, 90));
+            expArea.setBackground(new Color(248, 243, 236));
             expArea.setEditable(false);
             expArea.setBorder(new EmptyBorder(8, 12, 8, 12));
             expectedPanel.add(expArea, BorderLayout.CENTER);
@@ -145,7 +145,7 @@ public class CodingExerciseView extends JPanel {
         JPanel actionPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 14, 0));
         actionPanel.setOpaque(false);
 
-        hintButton = createActionBtn("💡 提示 (" + exercise.getHints().size() + ")", new Color(255, 180, 50), new Color(255, 200, 80));
+        hintButton = createActionBtn("💡 提示 (" + exercise.getHints().size() + ")", Theme.WARNING, new Color(240, 195, 85));
         hintButton.addActionListener(e -> showNextHint());
         actionPanel.add(hintButton);
 
@@ -189,24 +189,24 @@ public class CodingExerciseView extends JPanel {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBackground(Theme.BG_CODE);
         panel.setBorder(new CompoundBorder(
-            new MainWindow.RoundedBorder(Theme.RADIUS_MEDIUM, new Color(180, 185, 195)),
+            new MainWindow.RoundedBorder(Theme.RADIUS_MEDIUM, new Color(185, 160, 140)),
             new EmptyBorder(0, 0, 0, 0)
         ));
 
         // 标题栏
         JPanel bar = new JPanel(new BorderLayout());
-        bar.setBackground(new Color(50, 55, 65));
+        bar.setBackground(new Color(55, 45, 38));
         bar.setBorder(new EmptyBorder(8, 16, 8, 16));
 
         JLabel barLabel = new JLabel("📝 你的代码（类名保持 Main，Ctrl+Enter 运行）");
         barLabel.setFont(new Font("Microsoft YaHei", Font.BOLD, 12));
-        barLabel.setForeground(new Color(200, 210, 225));
+        barLabel.setForeground(new Color(210, 195, 170));
         bar.add(barLabel, BorderLayout.WEST);
 
         JButton resetBtn = new JButton("🔄 重置代码");
         resetBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 11));
-        resetBtn.setForeground(new Color(200, 210, 225));
-        resetBtn.setBackground(new Color(60, 65, 80));
+        resetBtn.setForeground(new Color(210, 195, 170));
+        resetBtn.setBackground(new Color(72, 58, 48));
         resetBtn.setBorder(new EmptyBorder(3, 10, 3, 10));
         resetBtn.setFocusPainted(false);
         resetBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -228,7 +228,7 @@ public class CodingExerciseView extends JPanel {
         // 编辑区
         codeEditor = new JTextArea(exercise.getStarterCode());
         codeEditor.setFont(Theme.FONT_CODE);
-        codeEditor.setForeground(new Color(220, 230, 240));
+        codeEditor.setForeground(new Color(225, 215, 195));
         codeEditor.setBackground(Theme.BG_CODE);
         codeEditor.setCaretColor(Color.WHITE);
         codeEditor.setTabSize(4);
@@ -245,32 +245,32 @@ public class CodingExerciseView extends JPanel {
 
     private JPanel createMiniOutputPanel() {
         JPanel panel = new JPanel(new BorderLayout());
-        panel.setBackground(new Color(30, 35, 45));
+        panel.setBackground(new Color(38, 32, 27));
         panel.setBorder(new CompoundBorder(
-            new MainWindow.RoundedBorder(Theme.RADIUS_MEDIUM, new Color(150, 155, 165)),
+            new MainWindow.RoundedBorder(Theme.RADIUS_MEDIUM, new Color(160, 138, 118)),
             new EmptyBorder(0, 0, 0, 0)
         ));
 
         JPanel bar = new JPanel(new BorderLayout());
-        bar.setBackground(new Color(40, 45, 55));
+        bar.setBackground(new Color(52, 42, 36));
         bar.setBorder(new EmptyBorder(6, 16, 6, 16));
         JLabel barLabel = new JLabel("📤 程序输出");
         barLabel.setFont(new Font("Microsoft YaHei", Font.BOLD, 12));
-        barLabel.setForeground(new Color(200, 210, 225));
+        barLabel.setForeground(new Color(210, 195, 170));
         bar.add(barLabel, BorderLayout.WEST);
         panel.add(bar, BorderLayout.NORTH);
 
         outputArea = new JTextArea();
         outputArea.setFont(new Font("NSimSun", Font.PLAIN, 13));
-        outputArea.setForeground(new Color(192, 224, 144));
-        outputArea.setBackground(new Color(30, 35, 45));
+        outputArea.setForeground(new Color(200, 214, 160));
+        outputArea.setBackground(new Color(38, 32, 27));
         outputArea.setEditable(false);
         outputArea.setBorder(new EmptyBorder(8, 14, 8, 14));
         outputArea.setText("（程序输出将显示在这里）");
 
         JScrollPane scroll = new JScrollPane(outputArea);
         scroll.setBorder(null);
-        scroll.getViewport().setBackground(new Color(30, 35, 45));
+        scroll.getViewport().setBackground(new Color(38, 32, 27));
         scroll.setPreferredSize(new Dimension(0, 120));
         panel.add(scroll, BorderLayout.CENTER);
 
